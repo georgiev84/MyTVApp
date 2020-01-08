@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:id="@+id/atext"
+        android:text="ЕКСКОМ ЕООД"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+    <!-- Screen elements that can render outside the overscan safe area go here -->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp">
+
+        <!-- Screen elements that need to be within the overscan safe area go here -->
+
+
+
+        <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/exo_playerview">
+
+        </com.google.android.exoplayer2.ui.SimpleExoPlayerView>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
