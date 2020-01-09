@@ -1,46 +1,52 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/layout"
     android:background="@drawable/animation_background"
     >
-    <TextView
-        android:id="@+id/atext"
-        android:text="ЕКСКОМ ЕООД"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:singleLine="true"
-        android:layout_marginLeft="20dp"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:scrollHorizontally="true"
-        android:padding="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <!-- Screen elements that can render outside the overscan safe area go here -->
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="27dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginRight="48dp">
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <!-- Screen elements that need to be within the overscan safe area go here -->
 
 
-
         <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:id="@+id/exo_playerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/exo_playerview">
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp">
 
         </com.google.android.exoplayer2.ui.SimpleExoPlayerView>
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/marquee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="10dp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="ЕКСКОМ ЕООД - www.kabeli.eu - LAN   CATV   Оптични мрежи   EPON   GPON   Видеонаблюдение   RACK   Security   Електро   V-SOL   General Cable   ELAN   Deviser   FiberFox   Fujikura"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

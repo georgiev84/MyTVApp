@@ -1,13 +1,13 @@
 package kzl.petar.mytvapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +33,7 @@ import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    RelativeLayout mRelativeLayout;
+    ConstraintLayout mLayout;
     AnimationDrawable mDrawable;
     TextView txtMarquee;
 
@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         // background animation
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        mRelativeLayout = findViewById(R.id.layout);
-        mDrawable = (AnimationDrawable) mRelativeLayout.getBackground();
+        mLayout = findViewById(R.id.layout);
+        mDrawable = (AnimationDrawable) mLayout.getBackground();
         mDrawable.setEnterFadeDuration(3000);
         mDrawable.setExitFadeDuration(3000);
         mDrawable.start();
