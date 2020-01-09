@@ -30,4 +30,5 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-hls:r2.5.0'
     implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:r2.5.0'
     implementation 'com.google.android.exoplayer:exoplayer-ui:r2.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

@@ -2,9 +2,13 @@ package kzl.petar.mytvapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.exoplayer2.ExoPlaybackException;
@@ -29,6 +33,10 @@ import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+    RelativeLayout mRelativeLayout;
+    AnimationDrawable mDrawable;
+    TextView txtMarquee;
+
     SimpleExoPlayerView exoPlayerView;
     SimpleExoPlayer exoPlayer;
     String videoUrl="http://78.130.146.194/video/xcom-advert.mp4";
@@ -37,7 +45,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        exoPlayerView = (SimpleExoPlayerView) findViewById(R.id.exo_playerview);
+        // background animation
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        mRelativeLayout = findViewById(R.id.layout);
+        mDrawable = (AnimationDrawable) mRelativeLayout.getBackground();
+        mDrawable.setEnterFadeDuration(3000);
+        mDrawable.setExitFadeDuration(3000);
+        mDrawable.start();
+
+        // marquee
+        txtMarquee = findViewById(R.id.marquee);
+        txtMarquee.setSelected(true);
+
+        // exoplayer
+        exoPlayerView =  findViewById(R.id.exo_playerview);
 
         try{
             BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
